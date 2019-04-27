@@ -17,7 +17,7 @@
           <div class="input-group-btn value">
             <input type="number" class="form-control" placeholder="Valor" formControlName="value"/>
           </div>
-          <button class="btn btn-danger" type="button"><strong>X</strong></button>
+          <button class="btn btn-danger" type="button" (click)="removeFilter(i)"><strong>X</strong></button>
         </div>
       </div>
       <button class="btn btn-default pull-left" type="button" (click)="resetFilters()"><strong>Restaurar</strong></button>

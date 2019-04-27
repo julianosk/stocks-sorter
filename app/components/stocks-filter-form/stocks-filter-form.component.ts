@@ -22,14 +22,6 @@ export class StocksFilterFormComponent {
   constructor(
     private fb: FormBuilder,
     private stockService: StockService){
-
-    // this.indicatorsKeys = this.stockService.indicatorsKeys();
-    // this.operators = this.stockService.operatorsMetadata();
-    // this.defaultFilters = this.stockService.defaultFilters();
-    // this.indicators = this.stockService.indicatorsMetadata();
-
-    console.log(this.indicators);
-
     this.createForm();
   }
 
@@ -59,11 +51,11 @@ export class StocksFilterFormComponent {
     this.setFilters(defaultFilters);
   }
 
-  onSubmit() {
-    // this.hero = this.prepareSaveHero();
-    // this.heroService.updateHero(this.hero).subscribe(/* error handling */);
-    // this.ngOnChanges();
+  removeFilter(index: number) {
+    this.filters.removeAt(index);
   }
+
+  onSubmit() {}
 
 }
 
