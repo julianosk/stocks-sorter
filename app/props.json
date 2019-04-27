@@ -1,0 +1,124 @@
+{
+  "props": {
+    "sum": {
+      "name": "Soma",
+      "order": "asc"
+    },
+    "price": {
+      "name": "Cotação",
+      "order": "asc"
+    },
+    "pl": {
+      "name": "P/L",
+      "desc": "Preço da ação dividido pelo lucro por ação",
+      "order": "asc"
+    },
+    "pvp": {
+      "name": "P/VP",
+      "desc": "Preço da ação dividido pelo Valor Patrimonial por ação",
+      "order": "asc"
+    },
+    "psr": {
+      "name": "PSR",
+      "desc": "Price Sales Ratio: Preço da ação dividido pela Receita Líquida por ação",
+      "order": "asc"
+    },
+    "divyield": {
+      "name": "Div. Yield",
+      "desc": "Dividend Yield: Dividendo pago por ação dividido pelo preço da ação",
+      "order": "desc"
+    },
+    "pativo": {
+      "name": "P/Ativo",
+      "desc": "Preço da ação dividido pelos Ativos Circulantes Líquidos por ação",
+      "order": "asc"
+    },
+    "pcapgiro": {
+      "name": "P/ Cap. Giro",
+      "desc": "Preço da ação dividido pelo capital de giro por ação",
+      "order": "asc"
+    },
+    "pebit": {
+      "name": "P/EBIT",
+      "desc": "Preço da ação dividido pelo EBIT por ação",
+      "order": "asc"
+    },
+    "pativcircliq": {
+      "name": "P/ Ativ Circ. Liq.",
+      "desc": "Preço da ação dividido pelos Ativos Circulantes Líquidos por ação",
+      "order": "asc"
+    },
+    "evebit": {
+      "name": "EV/EBIT",
+      "desc": "Valor da Firma (Enterprise Value dividido pelo EBIT.",
+      "order": "asc"
+    },
+    "mrgebit": {
+      "name": "Mrg Ebit",
+      "desc": "EBIT dividido pela Receita Líquida",
+      "order": "desc"
+    },
+    "mrgliq": {
+      "name": "Mrg. Líq.",
+      "desc": "Lucro Líquido dividido pela Receita Líquida",
+      "order": "desc"
+    },
+    "liqcorr": {
+      "name": "Liq. Corr.",
+      "desc": "Ativo Circulante dividido pelo Passivo Circulante",
+      "order": "desc"
+    },
+    "roic": {
+      "name": "ROIC",
+      "desc": "Retorno sobre o Capital Investido",
+      "order": "desc"
+    },
+    "roe": {
+      "name": "ROE",
+      "desc": "Retorno sobre o Patrimônio Líquido",
+      "order": "desc"
+    },
+    "liq2mes": {
+      "name": "Liq. 2 meses",
+      "desc": "Volume médio de negociação da ação nos últimos 2 meses (R$)",
+      "order": "desc"
+    },
+    "patrimliq": {
+      "name": "Patrim. Líq",
+      "desc": "O patrimônio líquido representa os valores que os sócios ou acionistas têm na empresa em um determinado momento",
+      "order": "desc"
+    },
+    "divbrutpatrim": {
+      "name": "Dív. Brut/ Patrim.",
+      "desc": "Dívida Bruta total (Dívida+Debêntures) dividido pelo Patrimônio Líquido",
+      "order": "asc"
+    },
+    "crescrec5a": {
+      "name": "Cresc. 5 anos",
+      "desc": "Crescimento da Receita Líquida nos últimos 5 anos",
+      "order": "desc"
+    }
+  },
+  "operators": {
+    "eq": {
+      "name": "Igual a",
+      "symbol": "="
+    },
+    "gt": {
+      "name": "Maior que",
+      "symbol": ">"
+    },
+    "gte": {
+      "name": "Maior ou igual que",
+      "symbol": ">="
+    },
+    "lt": {
+      "name": "Menor que",
+      "symbol": "<"
+    },
+    "lte": {
+      "name": "Menor ou igual que",
+      "symbol": "<="
+    }
+  }
+}

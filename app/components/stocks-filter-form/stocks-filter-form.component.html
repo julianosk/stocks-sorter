@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Filtros</strong></div>
+  <div class="panel-body filters-body" novalidate>
+    <form [formGroup]="filtersForm" (ngSubmit)="onSubmit()">
+      <div formArrayName="filters">
+        <div class="input-group filter" *ngFor="let filter of filters.controls; let i=index" [formGroupName]="i">
+          <div class="input-group-btn indicator">
+            <!--<button type="button" class="btn btn-default dropdown-toggle input-indicator" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ indicators[filter.indicator]?.name }} <span class="caret"></span></button>-->
+            <!--<ul class="dropdown-menu">-->
+            <!--<li *ngFor="let indicator of indicatorsKeys"><a href="#" (click)="filter.indicator = indicator">{{ indicators[indicator]?.name }}</a></li>-->
+            <!--</ul>-->
+            <select class="form-control" formControlName="indicator">
+              <option *ngFor="let indicator of indicators.list" [value]="indicator">{{indicators[indicator]?.name}}</option>
+            </select>
+          </div>
+          <div class="input-group-btn operator">
+            <!--<button type="button" class="btn btn-default dropdown-toggle input-operator" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ filter.operator.symbol }} <span class="caret"></span></button>-->
+            <!--<ul class="dropdown-menu" *ngIf="operators['list']">-->
+              <!--<li *ngFor="let operator of operators['list']"><a href="#" (click)="filter.operator = operators[operator]">{{ operators[operator].symbol }} ({{ operators[operator].name }})</a></li>-->
+            <!--</ul>-->
+            <select class="form-control" formControlName="operator">
+              <option *ngFor="let operator of operators.list" [value]="operator">{{operators[operator]?.symbol}} {{operators[operator]?.name}}</option>
+            </select>
+          </div>
+          <div class="input-group-btn value">
+            <input type="number" class="form-control" placeholder="Valor" formControlName="value"/>
+          </div>
+          <!--<span class="input-group-btn">-->
+              <button class="btn btn-danger" type="button"><strong>X</strong></button>
+          <!--</span>-->
+        </div>
+      </div>
+      <button class="btn btn-default pull-left" type="button" (click)="resetFilters()"><strong>Restaurar</strong></button>
+      <button class="btn btn-primary pull-right" type="button" (click)="updateTable()"><strong>Atualizar</strong></button>
+    </form>
+  </div>
+</div>
