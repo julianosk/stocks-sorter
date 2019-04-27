@@ -39,7 +39,7 @@ export class StocksComponent {
   }
 
   filterTable(filters: Filter[]) {
-    console.log("filterTable = " + filters);
+    console.log("filters = " + filters);
     console.log(JSON.stringify(filters));
     this.filterStocks2(filters)
   }
@@ -172,37 +172,9 @@ export class StocksComponent {
       let toAdd = true;
       for (let j in filters) {
         let filter = filters[j];
-        switch (filter.operator) {
-          case operators.eq.code: {
-            if (stock[filter.indicator] != filter.value) {
-              toAdd = false;
-            }
-            break;
-          }
-          case operators.gt.code: {
-            if (stock[filter.indicator] <= filter.value) {
-              toAdd = false;
-            }
-            break;
-          }
-          case operators.gte.code: {
-            if (stock[filter.indicator] < filter.value) {
-              toAdd = false;
-            }
-            break;
-          }
-          case operators.lt.code: {
-            if (stock[filter.indicator] >= filter.value) {
-              toAdd = false;
-            }
-            break;
-          }
-          case operators.lte.code: {
-            if (stock[filter.indicator] > filter.value) {
-              toAdd = false;
-            }
-            break;
-          }
+        if (!operators[filter.operator].check(stock[filter.indicator], filter.value)){
+          toAdd = false;
+          break;
         }
       }
       if (toAdd) {

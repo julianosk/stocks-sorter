@@ -10,13 +10,15 @@ export class Filter {
 }
 
 export class Operator {
-  code = "";
-  name = "";
-  symbol = "";
-  constructor(code, name, symbol) {
+  code: string = "";
+  name: string = "";
+  symbol: string = "";
+  check: (value1: number, value2: number) => boolean;
+  constructor(code, name, symbol, check) {
     this.code = code;
     this.name = name;
     this.symbol = symbol;
+    this.check = check;
   }
 }
 
@@ -36,11 +38,11 @@ export class Indicator {
 }
 
 export const operators = {
-  eq: new Operator("eq", "Igual a", "="),
-  gt: new Operator("gt", "Maior que", ">"),
-  gte: new Operator("gte", "Maior ou igual que", ">="),
-  lt: new Operator("lt", "Menor que", "<"),
-  lte: new Operator("lte", "Menor ou igual que", "<="),
+  eq: new Operator("eq", "Igual a", "=", (value1: number, value2: number) => value1 == value2),
+  gt: new Operator("gt", "Maior que", ">", (value1: number, value2: number) => value1 > value2),
+  gte: new Operator("gte", "Maior ou igual que", ">=", (value1: number, value2: number) => value1 >= value2),
+  lt: new Operator("lt", "Menor que", "<", (value1: number, value2: number) => value1 < value2),
+  lte: new Operator("lte", "Menor ou igual que", "<=", (value1: number, value2: number) => value1 <= value2),
   list: ["eq", "gt", "gte", "lt", "lte"]
 };
 
