@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import {StockService} from '../../services/stock.service';
 import {Stock} from '../../../Stock';
 import {StockDialogComponent} from '../stock-dialog/stock-dialog.component';
