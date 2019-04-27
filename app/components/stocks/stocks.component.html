@@ -32,7 +32,7 @@
                             <tr>
                                 <th>Papel</th>
                                 <th *ngFor="let column of columns" (click)="sortByColumn(column)">{{
-                                    indicators[column?.prop]?.name }} <span [ngClass]="getColumnClass(column)"></span></th>
+                                    indicators[column?.indicator]?.name }} <span [ngClass]="getColumnClass(column)"></span></th>
                                 <th>Tendência</th>
                             </tr>
                         </thead>
@@ -40,8 +40,8 @@
                             <tr *ngFor="let stock of stocks" (click)="showStockDialog(stock)" [ngClass]="{'star-stock': isStarStock(stock)}">
                                 <td>{{ stock.name }}</td>
                                 <td *ngFor="let column of columns">
-                                    <div *ngIf="stock['pos'+column?.prop]">{{ stock['pos'+column?.prop] }} ({{ stock[column?.prop] }}<span *ngIf="indicators[column?.prop]?.percentage">%</span>)</div>
-                                    <div *ngIf="!stock['pos'+column?.prop]">{{ stock[column?.prop] }}<span *ngIf="indicators[column?.prop]?.percentage">%</span></div>
+                                    <div *ngIf="stock['pos'+column?.indicator]">{{ stock['pos'+column?.indicator] }} ({{ stock[column?.indicator] }}<span *ngIf="indicators[column?.indicator]?.percentage">%</span>)</div>
+                                    <div *ngIf="!stock['pos'+column?.indicator]">{{ stock[column?.indicator] }}<span *ngIf="indicators[column?.indicator]?.percentage">%</span></div>
                                 </td>
                                 <td>
                                     <div *ngIf="stock['analysis']">

@@ -3,6 +3,7 @@ import {StockService} from '../../services/stock.service';
 import {Stock} from '../../../Stock';
 import {StockDialogComponent} from '../stock-dialog/stock-dialog.component';
 import {Filter, Indicator, defaultFilters, indicators, operators, Operator} from '../../data-model';
+import {Column, defaultColumns} from '../../model/Column'
 
 @Component({
   moduleId: module.id,
@@ -19,27 +20,30 @@ export class StocksComponent {
   operators = operators;
   filters: Array<{}>;
   filterList: Array<{}>;
-  orderBy: string[];
-  columns: Array<{prop: string, order: string}>;
-  columnClasses: {};
+  orderBy: string[] = ['pl', 'evebit', 'crescrec5a', 'divyield']
+  columns: Column[] = defaultColumns;
   @ViewChild('stockDialog') stockDialog: StockDialogComponent;
   showSidebar: boolean;
   indicatorsKeys;
+  columnClasses = {
+    'none': 'glyphicon glyphicon-sort',
+    'asc': 'glyphicon glyphicon-sort-by-attributes',
+    'desc': 'glyphicon glyphicon-sort-by-attributes-alt'
+  };
 
   constructor(private stockService:StockService){
     this.indicatorsKeys = this.operators.list;
     this.stockService.getStocks()
       .subscribe(stocks => {
         this.allStocks = stocks;
-        this.stocks = JSON.parse(JSON.stringify(this.allStocks));//Object.assign({}, this.allStocks);
-        this.applyDefaultFilter();
+        this.stocks = JSON.parse(JSON.stringify(this.allStocks));
+        this.applyFilter(defaultFilters);
+        this.sortStocks()
       });
   }
 
   filterTable(filters: Filter[]) {
-    console.log("filters = " + filters);
-    console.log(JSON.stringify(filters));
-    this.filterStocks(filters)
+    this.applyFilter(filters)
   }
 
   showStockDialog(stock : Stock) {
@@ -137,34 +141,13 @@ export class StocksComponent {
     this.orderBy.push('evebit');
     this.orderBy.push('crescrec5a');
     this.orderBy.push('divyield');
-    this.columns = Array<{prop: string, order: string}>();
-    this.columns.push({
-      prop: 'sum',
-      order: 'asc'
-    });
-    this.columns.push({
-      prop: 'pl',
-      order: 'none'
-    });
-    this.columns.push({
-      prop: 'crescrec5a',
-      order: 'none'
-    });
-    this.columns.push({
-      prop: 'divyield',
-      order: 'none'
-    });
-    this.columns.push({
-      prop: 'price',
-      order: 'none'
-    });
-    // this.filterStocks();
+    // this.applyFilter();
     this.filterStocksWithAnalysis();
     this.sortStocks();
     console.log('Loaded')
   }
   
-  filterStocks(filters: Filter[]) {
+  applyFilter(filters: Filter[]) {
     this.stocks = [];
     for (let i in this.allStocks){
       let stock = this.allStocks[i];
@@ -181,7 +164,7 @@ export class StocksComponent {
         this.stocks.push(stock);
       }
     }
-    console.log(`filterStocks end total = ${this.stocks.length}`);
+    console.log(`applyFilter end total = ${this.stocks.length}`);
   }
 
   filterStocksWithAnalysis() {
