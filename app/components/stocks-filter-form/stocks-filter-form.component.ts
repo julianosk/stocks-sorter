@@ -1,9 +1,9 @@
-import {Component, Input, OnChanges, Output, EventEmitter} from '@angular/core';
+import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import {StockService} from '../../services/stock.service';
+import { StockService } from '../../services/stock.service';
 
-import {Filter, Indicator, defaultFilters, indicators, operators, Operator} from '../../data-model';
-import {StockDialogComponent} from '../stock-dialog/stock-dialog.component';
+import { Filter, Indicator, defaultFilters, indicators, operators, Operator } from '../../data-model';
+import { StockDialogComponent } from '../stock-dialog/stock-dialog.component';
 
 @Component({
   moduleId: module.id,
@@ -19,9 +19,7 @@ export class StocksFilterFormComponent {
 
   @Output() applyFilter = new EventEmitter<string>();
 
-  constructor(
-    private fb: FormBuilder,
-    private stockService: StockService){
+  constructor(private fb: FormBuilder, private stockService: StockService) {
     this.createForm();
   }
 
@@ -55,7 +53,9 @@ export class StocksFilterFormComponent {
     this.filters.removeAt(index);
   }
 
-  onSubmit() {}
-
+  addFilter() {
+    this.filters.push(this.fb.group(new Filter(indicators.price.code, operators.eq.code, 0)));
+  }
+  
 }
 

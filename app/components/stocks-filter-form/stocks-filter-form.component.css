@@ -79,3 +79,9 @@ tr:hover {
 .input-group-btn.value {
     width: auto;
 }
+.add-filter-row {
+    margin-bottom: 4px;
+}
+.add-filter-row > button {
+    margin-right: 15px;
+}

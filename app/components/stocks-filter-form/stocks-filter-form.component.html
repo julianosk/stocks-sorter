@@ -1,7 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading"><strong>Filtros</strong></div>
   <div class="panel-body filters-body" novalidate>
-    <form [formGroup]="filtersForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="filtersForm">
       <div formArrayName="filters">
         <div class="input-group filter" *ngFor="let filter of filters.controls; let i=index" [formGroupName]="i">
           <div class="input-group-btn indicator">
@@ -19,6 +19,9 @@
           </div>
           <button class="btn btn-danger" type="button" (click)="removeFilter(i)"><strong>X</strong></button>
         </div>
+      </div>
+      <div class="row add-filter-row">
+        <button class="btn btn-success pull-right" type="button" (click)="addFilter()"><strong>+</strong></button>
       </div>
       <button class="btn btn-default pull-left" type="button" (click)="resetFilters()"><strong>Restaurar</strong></button>
       <button class="btn btn-primary pull-right" type="button" (click)="updateTable()"><strong>Atualizar</strong></button>
