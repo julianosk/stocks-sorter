@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import {StockService} from '../../services/stock.service';
-import {Stock} from '../../../Stock';
-import {StockDialogComponent} from '../stock-dialog/stock-dialog.component';
-import {Filter, Indicator, defaultFilters, indicators, operators, Operator} from '../../data-model';
-import {Column, defaultColumns} from '../../model/Column'
+import { StockService } from '../../services/stock.service';
+import { Stock } from '../../../Stock';
+import { StockDialogComponent } from '../stock-dialog/stock-dialog.component';
+import { Filter, Indicator, defaultFilters, indicators, operators, Operator } from '../../data-model';
+import { Column, defaultColumns } from '../../model/Column'
 
 @Component({
   moduleId: module.id,
@@ -34,7 +34,7 @@ export class StocksComponent {
     'desc': 'glyphicon glyphicon-sort-by-attributes-alt'
   };
 
-  constructor(private stockService:StockService){
+  constructor(private stockService: StockService) {
     this.indicatorsKeys = this.operators.list;
     this.stockService.getStocks()
       .subscribe(stocks => {
@@ -49,8 +49,8 @@ export class StocksComponent {
     this.applyFilter(filters)
   }
 
-  showStockDialog(stock : Stock) {
-    console.log("showStockDialog + "+stock.name);
+  showStockDialog(stock: Stock) {
+    console.log("showStockDialog + " + stock.name);
     this.stockDialog.show(stock);
   }
 
@@ -68,11 +68,11 @@ export class StocksComponent {
       min: 1,
       max: 20
     });
-    this.filters.push( {
+    this.filters.push({
       prop: 'roe',
       min: 0
     });
-    this.filters.push( {
+    this.filters.push({
       prop: 'pvp',
       min: 0,
       max: 10
@@ -149,15 +149,15 @@ export class StocksComponent {
     this.sortStocks();
     console.log('Loaded')
   }
-  
+
   applyFilter(filters: Filter[]) {
     this.stocks = [];
-    for (let i in this.allStocks){
+    for (let i in this.allStocks) {
       let stock = this.allStocks[i];
       let toAdd = true;
       for (let j in filters) {
         let filter = filters[j];
-        if (!operators[filter.operator].check(stock[filter.indicator], filter.value)){
+        if (!operators[filter.operator].check(stock[filter.indicator], filter.value)) {
           toAdd = false;
           break;
         }
@@ -173,7 +173,7 @@ export class StocksComponent {
   filterStocksWithAnalysis() {
     console.log("filterStocksWithAnalysis");
     this.stocks = [];
-    for (let i in this.allStocks){
+    for (let i in this.allStocks) {
       let stock = this.allStocks[i];
       if (stock['analysis']) {
         stock['sum'] = 0;
@@ -196,9 +196,9 @@ export class StocksComponent {
           return b[prop] - a[prop];
         });
       }
-      for(let i in this.stocks) {
+      for (let i in this.stocks) {
         let stock = this.stocks[i];
-        stock['pos'+prop] = 1.0+parseInt(i);
+        stock['pos' + prop] = 1.0 + parseInt(i);
         stock['sum'] += parseInt(i);
       }
 
@@ -206,7 +206,7 @@ export class StocksComponent {
     this.stocks.sort((a, b) => {
       return a['sum'] - b['sum'];
     });
-    for(let i in this.stocks) {
+    for (let i in this.stocks) {
       let stock = this.stocks[i];
       stock['possum'] = 1.0 + parseInt(i);
     }
@@ -214,13 +214,13 @@ export class StocksComponent {
     console.log("sortStocks end");
   }
 
-  sortByColumn(column){
+  sortByColumn(column) {
     if (column.order == 'asc') {
       this.unsortAllColumns();
       column.order = 'desc';
       this.stocks.sort((a, b) => {
-        if (b['pos'+column.prop]) {
-          return b['pos'+column.prop] - a['pos'+column.prop];
+        if (b['pos' + column.prop]) {
+          return b['pos' + column.prop] - a['pos' + column.prop];
         }
         return b[column.prop] - a[column.prop];
       });
@@ -228,8 +228,8 @@ export class StocksComponent {
       this.unsortAllColumns();
       column.order = 'asc';
       this.stocks.sort((a, b) => {
-        if (a['pos'+column.prop]) {
-          return a['pos'+column.prop] - b['pos'+column.prop];
+        if (a['pos' + column.prop]) {
+          return a['pos' + column.prop] - b['pos' + column.prop];
         }
         return a[column.prop] - b[column.prop];
       });
@@ -249,14 +249,14 @@ export class StocksComponent {
   filterToString(filter) {
     let range = "";
     if (filter['min'] || filter['min'] === 0) {
-      let number =  filter['min'] === 0 ? '0' : filter['min'].toString();
-      range += '['+ number + ' ';
+      let number = filter['min'] === 0 ? '0' : filter['min'].toString();
+      range += '[' + number + ' ';
     } else {
       range += '(∞ '
     }
     if (filter['max'] || filter['max'] === 0) {
       let number = filter['max'] === 0 ? '0' : filter['max'].toString();
-      range += '- ' + ((filter['max']==0)? '0': filter['max'].toString()) + ']';
+      range += '- ' + ((filter['max'] == 0) ? '0' : filter['max'].toString()) + ']';
     } else {
       range += '- ∞)';
     }
@@ -267,17 +267,17 @@ export class StocksComponent {
     if (trend === 'flat') {
       return 'glyphicon glyphicon-circle-arrow-right trend-flat';
     } else if (trend === 'up') {
-        return 'glyphicon glyphicon-circle-arrow-up trend-up';
+      return 'glyphicon glyphicon-circle-arrow-up trend-up';
     } else if (trend === 'down') {
-        return 'glyphicon glyphicon-circle-arrow-down trend-down';
+      return 'glyphicon glyphicon-circle-arrow-down trend-down';
     }
   }
 
   isStarStock(stock) {
-    return stock['analysis'] && 
-           stock['analysis']['short'] === 'up' && 
-           stock['analysis']['medium'] === 'up' && 
-           stock['analysis']['long'] === 'up';
+    return stock['analysis'] &&
+      stock['analysis']['short'] === 'up' &&
+      stock['analysis']['medium'] === 'up' &&
+      stock['analysis']['long'] === 'up';
   }
 
 }

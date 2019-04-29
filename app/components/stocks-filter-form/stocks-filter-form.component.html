@@ -6,16 +6,18 @@
         <div class="input-group filter" *ngFor="let filter of filters.controls; let i=index" [formGroupName]="i">
           <div class="input-group-btn indicator">
             <select class="form-control" formControlName="indicator">
-              <option *ngFor="let indicator of indicators.list" [value]="indicator">{{indicators[indicator]?.name}}</option>
+              <option *ngFor="let indicator of indicators.list" [value]="indicator">{{indicators[indicator]?.name}}
+              </option>
             </select>
           </div>
           <div class="input-group-btn operator">
             <select class="form-control" formControlName="operator">
-              <option *ngFor="let operator of operators.list" [value]="operator">{{operators[operator]?.symbol}} {{operators[operator]?.name}}</option>
+              <option *ngFor="let operator of operators.list" [value]="operator">{{operators[operator]?.symbol}}
+                {{operators[operator]?.name}}</option>
             </select>
           </div>
           <div class="input-group-btn value">
-            <input type="number" class="form-control" placeholder="Valor" formControlName="value"/>
+            <input type="number" class="form-control" placeholder="Valor" formControlName="value" />
           </div>
           <button class="btn btn-danger" type="button" (click)="removeFilter(i)"><strong>X</strong></button>
         </div>
@@ -23,8 +25,10 @@
       <div class="row add-filter-row">
         <button class="btn btn-success pull-right" type="button" (click)="addFilter()"><strong>+</strong></button>
       </div>
-      <button class="btn btn-default pull-left" type="button" (click)="resetFilters()"><strong>Restaurar</strong></button>
-      <button class="btn btn-primary pull-right" type="button" (click)="updateTable()"><strong>Atualizar</strong></button>
+      <button class="btn btn-default pull-left" type="button"
+        (click)="resetFilters()"><strong>Restaurar</strong></button>
+      <button class="btn btn-primary pull-right" type="button"
+        (click)="updateTable()"><strong>Atualizar</strong></button>
     </form>
   </div>
 </div>

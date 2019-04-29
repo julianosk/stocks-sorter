@@ -1,14 +1,14 @@
 export class Analysis {
-    stockName: string;
-    resistance1: string;
-    resistance2: string;
-    support1: string;
-    support2: string;
-    short: string;
-    medium: string;
-    long: string;
-    buy: string;
-    sell: string;
+  stockName: string;
+  resistance1: string;
+  resistance2: string;
+  support1: string;
+  support2: string;
+  short: string;
+  medium: string;
+  long: string;
+  buy: string;
+  sell: string;
 }
 export class Stock {
   name: string;

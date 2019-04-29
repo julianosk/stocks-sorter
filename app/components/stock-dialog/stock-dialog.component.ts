@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import {StockService} from '../../services/stock.service';
-import {Stock} from '../../../Stock';
-import {Filter, Indicator, defaultFilters, indicators, operators, Operator} from '../../data-model';
+import { StockService } from '../../services/stock.service';
+import { Stock } from '../../../Stock';
+import { Filter, Indicator, defaultFilters, indicators, operators, Operator } from '../../data-model';
 
 @Component({
   moduleId: module.id,
@@ -17,7 +17,7 @@ export class StockDialogComponent {
   private visibleAnimate = false;
   indicators = indicators;
 
-  constructor(private stockService : StockService) {
+  constructor(private stockService: StockService) {
     // this.indicators = this.stockService.indicatorsMetadata();
     // this.stockService.indicatorsMetadata()
     //   .subscribe(json => {

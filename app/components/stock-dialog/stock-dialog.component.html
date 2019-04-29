@@ -1,5 +1,5 @@
 <div id="myModal" class="modal fade" role="dialog" [ngClass]="{'in': visibleAnimate}"
-     [ngStyle]="{'display': visible ? 'block' : 'none', 'opacity': visibleAnimate ? 1 : 0}">
+  [ngStyle]="{'display': visible ? 'block' : 'none', 'opacity': visibleAnimate ? 1 : 0}">
   <div class="modal-backdrop" (click)="hide()"></div>
   <div class="modal-dialog">
 
@@ -11,129 +11,129 @@
       </div>
       <div class="modal-body">
         <div>
-        <div class="row">
-          <div class="col-md-4 prop">
-            <div class="col-md-6 prop-name">{{ indicators['pl'].name }}</div>
-            <div class="col-md-6">{{ stock.pl }}</div>
-          </div>
-          <div class="col-md-4 prop">
-            <div class="col-md-6 prop-name">{{ indicators['pvp'].name }}</div>
-            <div class="col-md-6">{{ stock.pvp }}</div>
-          </div>
-          <div class="col-md-4 prop">
-            <div class="col-md-6 prop-name">{{ indicators['psr'].name }}</div>
-            <div class="col-md-6">{{ stock.psr }}</div>
-          </div>
-          <div class="col-md-4 prop">
-            <div class="col-md-6 prop-name">{{ indicators['pativo'].name }}</div>
-            <div class="col-md-6">{{ stock.pativo }}</div>
-          </div>
-          <div class="col-md-4 prop">
-            <div class="col-md-6 prop-name">{{ indicators['pebit'].name }}</div>
-            <div class="col-md-6">{{ stock.pebit }}</div>
-          </div>
-          <div class="col-md-4 prop">
-            <div class="col-md-6 prop-name">{{ indicators['evebit'].name }}</div>
-            <div class="col-md-6">{{ stock.evebit }}</div>
-          </div>
-          <div class="col-md-4 prop">
-            <div class="col-md-6 prop-name">{{ indicators['mrgebit'].name }}</div>
-            <div class="col-md-6">{{ stock.mrgebit }}</div>
-          </div>
-          <div class="col-md-4 prop">
-            <div class="col-md-6 prop-name">{{ indicators['roic'].name }}</div>
-            <div class="col-md-6">{{ stock.roic }}</div>
-          </div>
-          <div class="col-md-4 prop">
-            <div class="col-md-6 prop-name">{{ indicators['roe'].name }}</div>
-            <div class="col-md-6">{{ stock.roe }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">{{ indicators['divyield'].name }}</div>
-            <div class="col-md-6">{{ stock.divyield }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">{{ indicators['pcapgiro'].name }}</div>
-            <div class="col-md-6">{{ stock.pcapgiro }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">{{ indicators['pativcircliq'].name }}</div>
-            <div class="col-md-6">{{ stock.pativcircliq }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">{{ indicators['mrgliq'].name }}</div>
-            <div class="col-md-6">{{ stock.mrgliq }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">{{ indicators['liqcorr'].name }}</div>
-            <div class="col-md-6">{{ stock.liqcorr }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">{{ indicators['liq2mes'].name }}</div>
-            <div class="col-md-6">{{ stock.liq2mes }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">{{ indicators['patrimliq'].name }}</div>
-            <div class="col-md-6">{{ stock.patrimliq }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">{{ indicators['divbrutpatrim'].name }}</div>
-            <div class="col-md-6">{{ stock.divbrutpatrim }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">{{ indicators['crescrec5a'].name }}</div>
-            <div class="col-md-6">{{ stock.crescrec5a }}</div>
-          </div>
-        </div>
-        <div *ngIf="stock['analysis']" class="row">
-          <div class="col-md-12">
-            <div class="col-md-12 analysis">
-              <strong>Análise</strong> ({{stock.analysis.date}})
+          <div class="row">
+            <div class="col-md-4 prop">
+              <div class="col-md-6 prop-name">{{ indicators['pl'].name }}</div>
+              <div class="col-md-6">{{ stock.pl }}</div>
+            </div>
+            <div class="col-md-4 prop">
+              <div class="col-md-6 prop-name">{{ indicators['pvp'].name }}</div>
+              <div class="col-md-6">{{ stock.pvp }}</div>
+            </div>
+            <div class="col-md-4 prop">
+              <div class="col-md-6 prop-name">{{ indicators['psr'].name }}</div>
+              <div class="col-md-6">{{ stock.psr }}</div>
+            </div>
+            <div class="col-md-4 prop">
+              <div class="col-md-6 prop-name">{{ indicators['pativo'].name }}</div>
+              <div class="col-md-6">{{ stock.pativo }}</div>
+            </div>
+            <div class="col-md-4 prop">
+              <div class="col-md-6 prop-name">{{ indicators['pebit'].name }}</div>
+              <div class="col-md-6">{{ stock.pebit }}</div>
+            </div>
+            <div class="col-md-4 prop">
+              <div class="col-md-6 prop-name">{{ indicators['evebit'].name }}</div>
+              <div class="col-md-6">{{ stock.evebit }}</div>
+            </div>
+            <div class="col-md-4 prop">
+              <div class="col-md-6 prop-name">{{ indicators['mrgebit'].name }}</div>
+              <div class="col-md-6">{{ stock.mrgebit }}</div>
+            </div>
+            <div class="col-md-4 prop">
+              <div class="col-md-6 prop-name">{{ indicators['roic'].name }}</div>
+              <div class="col-md-6">{{ stock.roic }}</div>
+            </div>
+            <div class="col-md-4 prop">
+              <div class="col-md-6 prop-name">{{ indicators['roe'].name }}</div>
+              <div class="col-md-6">{{ stock.roe }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">{{ indicators['divyield'].name }}</div>
+              <div class="col-md-6">{{ stock.divyield }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">{{ indicators['pcapgiro'].name }}</div>
+              <div class="col-md-6">{{ stock.pcapgiro }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">{{ indicators['pativcircliq'].name }}</div>
+              <div class="col-md-6">{{ stock.pativcircliq }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">{{ indicators['mrgliq'].name }}</div>
+              <div class="col-md-6">{{ stock.mrgliq }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">{{ indicators['liqcorr'].name }}</div>
+              <div class="col-md-6">{{ stock.liqcorr }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">{{ indicators['liq2mes'].name }}</div>
+              <div class="col-md-6">{{ stock.liq2mes }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">{{ indicators['patrimliq'].name }}</div>
+              <div class="col-md-6">{{ stock.patrimliq }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">{{ indicators['divbrutpatrim'].name }}</div>
+              <div class="col-md-6">{{ stock.divbrutpatrim }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">{{ indicators['crescrec5a'].name }}</div>
+              <div class="col-md-6">{{ stock.crescrec5a }}</div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="row col-md-12 center-text prop-name">Curto prazo</div>
-            <div class="row col-md-12 center-text">
-              <span [ngClass]="getTrendClass(stock['analysis']['short'])"></span>
+          <div *ngIf="stock['analysis']" class="row">
+            <div class="col-md-12">
+              <div class="col-md-12 analysis">
+                <strong>Análise</strong> ({{stock.analysis.date}})
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row col-md-12 center-text prop-name">Curto prazo</div>
+              <div class="row col-md-12 center-text">
+                <span [ngClass]="getTrendClass(stock['analysis']['short'])"></span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row col-md-12 center-text prop-name">Médio prazo</div>
+              <div class="row col-md-12 center-text">
+                <span [ngClass]="getTrendClass(stock['analysis']['medium'])"></span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row col-md-12 center-text prop-name">Longo prazo</div>
+              <div class="row col-md-12 center-text">
+                <span [ngClass]="getTrendClass(stock['analysis']['long'])"></span>
+              </div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">Resistência 1</div>
+              <div class="col-md-6">{{ stock.analysis.resistance1 }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">Resistência 2</div>
+              <div class="col-md-6">{{ stock.analysis.resistance2 }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">Suporte 1</div>
+              <div class="col-md-6">{{ stock.analysis.support1 }}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-6 prop-name">Suporte 2</div>
+              <div class="col-md-6">{{ stock.analysis.support2}}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-12 prop-name center-text">Comprar</div>
+              <div class="col-md-12">{{ stock.analysis.buy}}</div>
+            </div>
+            <div class="col-md-6 prop">
+              <div class="col-md-12 prop-name center-text">Vender</div>
+              <div class="col-md-12">{{ stock.analysis.sell}}</div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="row col-md-12 center-text prop-name">Médio prazo</div>
-            <div class="row col-md-12 center-text">
-              <span [ngClass]="getTrendClass(stock['analysis']['medium'])"></span>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="row col-md-12 center-text prop-name">Longo prazo</div>
-            <div class="row col-md-12 center-text">
-              <span [ngClass]="getTrendClass(stock['analysis']['long'])"></span>
-            </div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">Resistência 1</div>
-            <div class="col-md-6">{{ stock.analysis.resistance1 }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">Resistência 2</div>
-            <div class="col-md-6">{{ stock.analysis.resistance2 }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">Suporte 1</div>
-            <div class="col-md-6">{{ stock.analysis.support1 }}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-6 prop-name">Suporte 2</div>
-            <div class="col-md-6">{{ stock.analysis.support2}}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-12 prop-name center-text">Comprar</div>
-            <div class="col-md-12">{{ stock.analysis.buy}}</div>
-          </div>
-          <div class="col-md-6 prop">
-            <div class="col-md-12 prop-name center-text">Vender</div>
-            <div class="col-md-12">{{ stock.analysis.sell}}</div>
-          </div>
-        </div>
         </div>
       </div>
       <div class="modal-footer">
