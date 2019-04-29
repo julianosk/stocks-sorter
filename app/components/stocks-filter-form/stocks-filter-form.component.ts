@@ -5,6 +5,8 @@ import { StockService } from '../../services/stock.service';
 import { Filter, Indicator, defaultFilters, indicators, operators, Operator } from '../../data-model';
 import { StockDialogComponent } from '../stock-dialog/stock-dialog.component';
 
+// TODO Add validation
+
 @Component({
   moduleId: module.id,
   selector: 'stocks-filter-form',
@@ -56,6 +58,6 @@ export class StocksFilterFormComponent {
   addFilter() {
     this.filters.push(this.fb.group(new Filter(indicators.price.code, operators.eq.code, 0)));
   }
-  
+
 }
 

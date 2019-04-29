@@ -12,6 +12,9 @@ import {Column, defaultColumns} from '../../model/Column'
   styleUrls: ['stocks.component.css']
 })
 
+// TODO Columns form
+// TODO OrderBy form
+
 export class StocksComponent {
   allStocks: Stock[];
   stocks: Stock[];
